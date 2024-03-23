@@ -2,7 +2,6 @@ import 'package:brick_breaker/src/brick_breaker.dart';
 import 'package:brick_breaker/src/config.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class GameApp extends StatelessWidget {
   const GameApp({super.key});
@@ -11,12 +10,6 @@ class GameApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        textTheme: GoogleFonts.pressStart2pTextTheme().apply(
-          bodyColor: const Color(0xff184e77),
-          displayColor: const Color(0xff184e77),
-        ),
-      ),
       home: Scaffold(
         body: Container(
           decoration: const BoxDecoration(
@@ -43,7 +36,8 @@ class GameApp extends StatelessWidget {
                         PlayState.welcome.name: (context, game) => const Center(
                               child: Text('Play'),
                             ),
-                        PlayState.gameOver.name: (context, game) => const Center(
+                        PlayState.gameOver.name: (context, game) =>
+                            const Center(
                               child: Text('Game Over'),
                             ),
                         PlayState.won.name: (context, game) => const Center(
